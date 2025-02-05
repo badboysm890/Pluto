@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Base styles */
+body {
+  @apply bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white transition-colors duration-200;
+}
+
+/* Dark mode specific styles */
+.dark body {
+  @apply bg-gradient-to-br from-gray-900 via-black to-gray-900;
+}
+
+/* Light mode specific styles */
+:root:not(.dark) body {
+  @apply bg-gradient-to-br from-gray-100 via-white to-gray-100 text-gray-900;
+}
+
+/* Markdown content styles */
+.markdown-content {
+  @apply text-base leading-relaxed;
+}
+
+.markdown-content > *:first-child {
+  @apply mt-0;
+}
+
+.markdown-content > *:last-child {
+  @apply mb-0;
+}
+
+.markdown-content pre {
+  @apply text-sm;
+}
+
+.markdown-content code {
+  @apply text-sm;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply pl-4;
+}
+
+.markdown-content li > p {
+  @apply inline;
+}
+
+.markdown-content table {
+  @apply w-full border-collapse;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
